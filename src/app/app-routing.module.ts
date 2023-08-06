@@ -20,6 +20,14 @@ const routes: Routes = [
     component:FeaturedComponent
   },
   {
+    path:"new-releases",
+    component:FeaturedComponent
+  },
+  {
+    path:"upcoming",
+    component:FeaturedComponent
+  },
+  {
     path:"login",
     component:LoginComponent
   },

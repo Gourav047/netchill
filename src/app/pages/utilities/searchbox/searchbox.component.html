@@ -9,7 +9,7 @@
                 <button mat-button color="primary">Search</button>
             </div> 
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4" *ngIf="showButtons">
             <div class="row loginSection">
                 <div class="col-md-4"><button mat-button color="primary" (click)="redirection('signup')">Sign Up</button></div>
                 <div class="col-md-3"><button mat-button color="primary" (click)="redirection('login')">Login</button></div>

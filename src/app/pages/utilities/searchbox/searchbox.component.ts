@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-searchbox',
@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class SearchboxComponent {
   searchText:string='';
+  @Input() showButtons:boolean=false;
 
   constructor(){}
 
   ngOnInit(){
-    
   }
 
   redirection(val:string){
