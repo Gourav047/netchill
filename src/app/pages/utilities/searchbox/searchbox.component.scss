@@ -1,8 +1,6 @@
 .search-hero {
-    //max-width: 500px;
-    //padding-bottom: 50px;
     width:80%;
-    margin: auto;
+    margin-right: 20px;
 }
 
 .form-control {
@@ -15,8 +13,9 @@
 
 .search__container{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
+    padding:0;
 }
 
 .loginSection{

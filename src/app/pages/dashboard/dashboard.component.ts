@@ -30,6 +30,7 @@ export class DashboardComponent {
   upcoming_data:imageObj[]=upcommingData;
   feature_data:featureData = featureDataSet;
   isLogin:boolean=true;
+  showButtons:boolean=true;
 
   constructor(){}
 
