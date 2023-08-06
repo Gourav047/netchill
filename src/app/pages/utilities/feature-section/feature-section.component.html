@@ -1,0 +1,17 @@
+<div class="container mt-3">
+    <h4>Featured</h4>
+    <div class="row">
+        <div class="feature_container" *ngFor="let data of feature_data.feature">
+            <img src="../../../../assets/media/Thumbnails/{{data.source}}" alt=""  height="200px" width="150px">
+        </div>
+    </div>
+</div>
+<div class="container mt-2">
+    <h4>New Release</h4>
+    <div class="row">
+        <div class="feature_container" *ngFor="let data of feature_data.newRelease">
+            <img src="../../../../assets/media/Thumbnails/{{data.source}}" alt=""  height="200px" width="150px">
+            <label>{{data.title}}</label>
+        </div>
+    </div>
+</div>

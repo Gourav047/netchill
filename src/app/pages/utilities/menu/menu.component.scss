@@ -1,0 +1,25 @@
+div#menubar1 {
+    padding: 24px;
+}
+
+div#menubar1>a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    background: #56d1e7;
+    padding: 12px 20px;
+    color: #1f1e1e;
+    margin-right: 5px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background 0.3s linear 0s, color 0.3s linear 0s;
+}
+
+div#menubar1>a:hover {
+    background: #023966;
+    color: #fff;
+}
+
+.admin_list{
+    background-color: #ec830b !important;
+    color: #fff !important;
+}
