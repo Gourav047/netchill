@@ -34,6 +34,7 @@ export class LoginComponent {
 
     if(postLogin.id){
       this._accountServive.set(true);
+      postLogin.isAdmin?this._accountServive.isAdminSetter(true):this._accountServive.isAdminSetter(false);
       this.redirect('dashboard');
     }else{
       this._accountServive.set(false);

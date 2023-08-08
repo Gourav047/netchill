@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AccountService } from 'src/app/environment/models/account/account.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,10 +9,15 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent {
 
-  isAdmin:boolean = false;
-  constructor(private _router:Router){}
+  isAdmin: boolean;
+  constructor(
+    private _router: Router,
+    private _accountService: AccountService
+  ) {
+    this.isAdmin = this._accountService.isAdminGetter();
+  }
 
-  redirect(val:string){
+  redirect(val: string) {
     this._router.navigate([`/${val}`]);
   }
 }
