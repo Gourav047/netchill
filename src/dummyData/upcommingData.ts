@@ -73,3 +73,5 @@ export const feature = [
         "source": "RRR.jpg",
     }
 ]
+
+export const myList=[];

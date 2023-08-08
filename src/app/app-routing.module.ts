@@ -4,6 +4,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FeaturedComponent } from './pages/featured/featured.component';
+import { MyListComponent } from './pages/my-list/my-list.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:"upcoming",
     component:FeaturedComponent
+  },
+  {
+    path:"myList",
+    component:MyListComponent
   },
   {
     path:"login",
