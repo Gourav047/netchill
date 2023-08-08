@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searchbox',
@@ -9,12 +10,12 @@ export class SearchboxComponent {
   searchText:string='';
   @Input() showButtons:boolean=false;
 
-  constructor(){}
+  constructor(private _router:Router){}
 
   ngOnInit(){
   }
 
   redirection(val:string){
-    window.location.href = val;
+    this._router.navigate([`/${val}`]);
   }
 }

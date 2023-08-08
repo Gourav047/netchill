@@ -4,12 +4,12 @@
     </div>
     <div class="data__container pt-4 pb-4">
         <div class="logout_area" *ngIf="isLogin">
-            <button mat-button color="primary">Sign out</button>
+            <button mat-button color="primary" (click)="logout()">Sign out</button>
         </div>
         <!-- Search Box -->
         <div class="container">
             <div class="row">
-                <app-searchbox [showButtons]="showButtons"></app-searchbox>
+                <app-searchbox [showButtons]="!showButtons"></app-searchbox>
             </div>
         </div>
 

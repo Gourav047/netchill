@@ -50,8 +50,4 @@ export class AccountService {
     return this._http.post(url,JSON.stringify(object),this.httpOptions);
   }
 
-  authenticationService(){
-
-  }
-
 }

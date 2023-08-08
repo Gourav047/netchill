@@ -1,9 +1,9 @@
 <div id="menubar1">
-    <a href="dashboard">Home</a>
-    <a href="featured">Featured</a>
-    <a href="new-releases">New Releases</a>
-    <a href="upcoming">Upcoming</a>
-    <a href="myList">My List</a>
-    <a href="about.html" *ngIf="isAdmin" class="admin_list">Upload Content</a>
-    <a href="about.html" *ngIf="isAdmin" class="admin_list">Revoke Subscription</a>
+    <span (click)="redirect('dashboard')">Home</span>
+    <span (click)="redirect('featured')">Featured</span>
+    <span (click)="redirect('new-releases')">New Releases</span>
+    <span (click)="redirect('upcoming')">Upcoming</span>
+    <span (click)="redirect('myList')">My List</span>
+    <span *ngIf="isAdmin" class="admin_list" (click)="redirect('upload_content')">Upload Content</span>
+    <span *ngIf="isAdmin" class="admin_list" (click)="redirect('revoke Subscription')">Revoke Subscription</span>
 </div>

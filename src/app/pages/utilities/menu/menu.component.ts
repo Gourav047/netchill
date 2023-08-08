@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
 export class MenuComponent {
 
   isAdmin:boolean = false;
-  constructor(){}
+  constructor(private _router:Router){}
+
+  redirect(val:string){
+    this._router.navigate([`/${val}`]);
+  }
 }
