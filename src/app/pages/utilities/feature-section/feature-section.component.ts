@@ -8,10 +8,16 @@ import { featureData } from '../../dashboard/dashboard.component';
 })
 export class FeatureSectionComponent {
 
-  @Input() feature_data : featureData = {
-    feature:[],
-    newRelease:[]
+  @Input() feature_data: featureData = {
+    feature: [],
+    newRelease: []
   }
 
-  
+  constructor() { }
+
+  ngOnInit() { }
+
+  openWatchComponent(){
+    window.location.href = 'watch';
+  }
 }

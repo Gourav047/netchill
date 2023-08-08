@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div id="menu_container" class="mt-2 menu__options" *ngIf="isLogin">
+        <app-menu></app-menu>
+    </div>
+    <div class="data__container pt-4 pb-4">
+        <div class="logout_area" *ngIf="isLogin">
+            <button mat-button color="primary">Sign out</button>
+        </div>
+
+        <div class="container">
+            
+        </div>
+    </div>
+</div>

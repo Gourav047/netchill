@@ -17,4 +17,8 @@ export class UpcomingSectionComponent {
 
   ngOnInit(){
   }
+
+  openWatchComponent(){
+    window.location.href = 'watch';
+  }
 }
