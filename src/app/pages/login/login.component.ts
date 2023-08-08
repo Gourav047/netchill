@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AccountService } from 'src/app/environment/models/account/account.service';
+import { tosterFunction } from 'src/app/util/utilities';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent {
   loginForm: any;
-  constructor() {
+  constructor(private _accountServive:AccountService) {
     this.createForm();
   }
 
@@ -23,11 +25,37 @@ export class LoginComponent {
     })
   }
 
-  login() {
+  async login() {
+    const postLogin = await this.postLogin({
+      email:this.loginForm.value.username,
+      password:this.loginForm.value.password
+    })
 
+    if(postLogin.id){
+      setTimeout(() => {
+        this._accountServive.set(true);
+        this.redirect('dashboard');
+      }, 3000);
+    }else{
+      this._accountServive.set(false);
+      tosterFunction('error','Oops..!! Wrong Details');
+    }
   }
 
-  signup(val:string):void{
+  postLogin(object:any):Promise<any>{
+    return new Promise((resolve,reject)=>{
+      this._accountServive.login(object).subscribe(res=>{
+        if(res!=null){
+          tosterFunction('success','Login sucessfull');
+          resolve(res);
+        }else reject({
+          error:"Something Went Wrong"
+        })
+      })
+    })
+  }
+
+  redirect(val:string){
     window.location.href = val;
   }
 }
