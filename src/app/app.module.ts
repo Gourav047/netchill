@@ -19,6 +19,8 @@ import { UpcomingSectionComponent } from './pages/utilities/upcoming-section/upc
 import { FeatureSectionComponent } from './pages/utilities/feature-section/feature-section.component';
 import { FeaturedComponent } from './pages/featured/featured.component';
 import { MyListComponent } from './pages/my-list/my-list.component';
+import { WatchComponent } from './pages/watch/watch.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { MyListComponent } from './pages/my-list/my-list.component';
     UpcomingSectionComponent,
     FeatureSectionComponent,
     FeaturedComponent,
-    MyListComponent
+    MyListComponent,
+    WatchComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { MyListComponent } from './pages/my-list/my-list.component';
     MatInputModule,
     MatButtonModule,
     MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
