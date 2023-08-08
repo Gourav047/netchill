@@ -18,6 +18,7 @@ import { SearchboxComponent } from './pages/utilities/searchbox/searchbox.compon
 import { UpcomingSectionComponent } from './pages/utilities/upcoming-section/upcoming-section.component';
 import { FeatureSectionComponent } from './pages/utilities/feature-section/feature-section.component';
 import { FeaturedComponent } from './pages/featured/featured.component';
+import { MyListComponent } from './pages/my-list/my-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FeaturedComponent } from './pages/featured/featured.component';
     SearchboxComponent,
     UpcomingSectionComponent,
     FeatureSectionComponent,
-    FeaturedComponent
+    FeaturedComponent,
+    MyListComponent
   ],
   imports: [
     BrowserModule,
