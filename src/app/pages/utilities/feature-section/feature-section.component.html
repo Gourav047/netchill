@@ -2,7 +2,8 @@
     <h4>Featured</h4>
     <div class="row">
         <div class="feature_container" *ngFor="let data of feature_data.feature">
-            <img src="../../../../assets/media/Thumbnails/{{data.source}}" alt=""  height="200px" width="150px">
+            <span (click)="openWatchComponent()"><img src="../../../../assets/media/Thumbnails/{{data.source}}" alt=""
+                    height="200px" width="150px"></span>
         </div>
     </div>
 </div>
@@ -10,7 +11,8 @@
     <h4>New Release</h4>
     <div class="row">
         <div class="feature_container" *ngFor="let data of feature_data.newRelease">
-            <img src="../../../../assets/media/Thumbnails/{{data.source}}" alt=""  height="200px" width="150px">
+            <span (click)="openWatchComponent()"><img src="../../../../assets/media/Thumbnails/{{data.source}}" alt=""
+                    height="200px" width="150px"></span>
             <label>{{data.title}}</label>
         </div>
     </div>

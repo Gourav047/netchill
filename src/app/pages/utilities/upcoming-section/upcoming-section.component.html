@@ -1,6 +1,6 @@
 <div class="container">
     <h2>Upcomming</h2>
     <div class="mt-1" *ngFor="let data of upcoming_data">
-        <img src="../../../../assets/media/Thumbnails/{{data.source}}" alt=""  height="150px" width="260px">
+        <span (click)="openWatchComponent()"><img src="../../../../assets/media/Thumbnails/{{data.source}}" alt="" height="150px" width="260px"></span>
     </div>
 </div>
