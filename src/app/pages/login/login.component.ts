@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AccountService } from 'src/app/environment/models/account/account.service';
 import { tosterFunction } from 'src/app/util/utilities';
 
@@ -10,7 +11,7 @@ import { tosterFunction } from 'src/app/util/utilities';
 })
 export class LoginComponent {
   loginForm: any;
-  constructor(private _accountServive:AccountService) {
+  constructor(private _accountServive:AccountService,  private _router: Router) {
     this.createForm();
   }
 
@@ -32,10 +33,9 @@ export class LoginComponent {
     })
 
     if(postLogin.id){
-      setTimeout(() => {
-        this._accountServive.set(true);
-        this.redirect('dashboard');
-      }, 3000);
+      this._accountServive.set(true);
+      postLogin.isAdmin?this._accountServive.isAdminSetter(true):this._accountServive.isAdminSetter(false);
+      this.redirect('dashboard');
     }else{
       this._accountServive.set(false);
       tosterFunction('error','Oops..!! Wrong Details');
@@ -46,7 +46,6 @@ export class LoginComponent {
     return new Promise((resolve,reject)=>{
       this._accountServive.login(object).subscribe(res=>{
         if(res!=null){
-          tosterFunction('success','Login sucessfull');
           resolve(res);
         }else reject({
           error:"Something Went Wrong"
@@ -56,6 +55,6 @@ export class LoginComponent {
   }
 
   redirect(val:string){
-    window.location.href = val;
+    this._router.navigate([`/${val}`]);
   }
 }

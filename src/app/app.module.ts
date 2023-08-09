@@ -21,6 +21,9 @@ import { FeaturedComponent } from './pages/featured/featured.component';
 import { MyListComponent } from './pages/my-list/my-list.component';
 import { WatchComponent } from './pages/watch/watch.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UploadMoviesComponent } from './pages/upload-movies/upload-movies.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     FeatureSectionComponent,
     FeaturedComponent,
     MyListComponent,
-    WatchComponent
+    WatchComponent,
+    UploadMoviesComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

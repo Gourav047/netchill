@@ -11,8 +11,8 @@ type signup = {
 }
 
 type login = {
-  email:string,
-  password:string
+  email: string,
+  password: string
 }
 
 @Injectable({
@@ -21,37 +21,43 @@ type login = {
 export class AccountService {
 
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  private isAdminSubject = new BehaviorSubject<boolean>(false);
+
   public isAuthenticated$: Observable<boolean> = this.isAuthenticatedSubject.asObservable();
 
   constructor(private _http: HttpClient) { }
 
   httpOptions = {
     headers: new HttpHeaders({
-      'accept':'*/*',
+      'accept': '*/*',
       'Content-Type': 'application/json'  // Example header
     })
   };
-  
+
   isAuthenticated(): boolean {
     return this.isAuthenticatedSubject.value;
   }
 
-  set(val:boolean){
+  isAdminGetter(): boolean {
+    return this.isAdminSubject.value;
+  }
+
+  isAdminSetter(val: boolean) {
+    this.isAdminSubject.next(val);
+  }
+
+  set(val: boolean) {
     this.isAuthenticatedSubject.next(val);
   }
 
-  signUp(object: signup):Observable<any> {
+  signUp(object: signup): Observable<any> {
     const url = api.Account.Signup;
-    return this._http.post(url,JSON.stringify(object),this.httpOptions);
+    return this._http.post(url, JSON.stringify(object), this.httpOptions);
   }
 
-  login(object:login):Observable<any>{
-    const url=api.Account.Login;
-    return this._http.post(url,JSON.stringify(object),this.httpOptions);
-  }
-
-  authenticationService(){
-
+  login(object: login): Observable<any> {
+    const url = api.Account.Login;
+    return this._http.post(url, JSON.stringify(object), this.httpOptions);
   }
 
 }
