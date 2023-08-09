@@ -6,6 +6,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FeaturedComponent } from './pages/featured/featured.component';
 import { MyListComponent } from './pages/my-list/my-list.component';
 import { AuthguardService } from './environment/models/authguard.service';
+import { UploadMoviesComponent } from './pages/upload-movies/upload-movies.component';
 
 
 const routes: Routes = [
@@ -49,7 +50,11 @@ const routes: Routes = [
     path:"watch",
     canActivate: [AuthguardService],
     component:SignupComponent
-  }
+  },
+  {
+    path:"upload-movies",
+    component:UploadMoviesComponent
+  },
 ];
 
 @NgModule({
